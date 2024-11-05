@@ -1,11 +1,23 @@
-import { DB_HOST, DB_NAME, DB_PASSWORD, DB_PORT, DB_USER } from '../constants/env.js';
+import { CLIENT_VERSION, DB_HOST, DB_NAME, DB_PASSWORD, DB_PORT, DB_USER, HOST, PORT } from '../constants/env.js';
+import { PACKET_TYPE_LENGTH, TOTAL_LENGTH } from '../constants/header.js';
 
 export const config = {
+  server: {
+    port: PORT,
+    host: HOST,
+  },
+  client: {
+    version: CLIENT_VERSION,
+  },
+  packet: {
+    totalLength: TOTAL_LENGTH,
+    typeLength: PACKET_TYPE_LENGTH,
+  },
   database: {
     database: DB_NAME,
-    host: DB_HOST,
-    password: DB_PASSWORD,
-    port: DB_PORT,
     user: DB_USER,
+    password: DB_PASSWORD,
+    host: DB_HOST,
+    port: DB_PORT,
   },
 };
